@@ -1,6 +1,7 @@
 ---
-name: thai-gov-document-writer
-description: ใช้เมื่อผู้ใช้ขอร่างหนังสือราชการไทย (หนังสือภายนอก หนังสือภายใน บันทึกข้อความ คำสั่ง ระเบียบ ประกาศ แถลงการณ์ ข่าว หรือเอกสารราชการอื่น ๆ) ตามระเบียบสำนักนายกรัฐมนตรีว่าด้วยงานสารบรรณ พ.ศ. 2526 และฉบับแก้ไขถึงฉบับที่ 4 พ.ศ. 2564. Use when the user asks Claude to draft, write, format, or review any Thai government official document (หนังสือราชการ, สารบรรณ, ราชการ).
+name: thaidocreview
+description: Opt-in skill loaded only when the user explicitly invokes /thaidocreview. Drafts หนังสือราชการไทย ตามระเบียบสารบรรณ 2526 (แก้ไขถึงฉบับ 4/2564). Do NOT auto-load — Thai official writing style is used only inside the government circle and auto-loading would waste tokens for general users.
+disable-model-invocation: true
 ---
 
 # Thai Government Document Writer
@@ -79,12 +80,19 @@ Skill นี้ทำให้ Claude ร่างหนังสือราช
 | ก่อนใส่เลขที่/วันที่ | `references/05-numbering.md` |
 | มีข้อมูลส่วนบุคคล/ชั้นความลับ | `references/06-data-safety.md` (หยุดร่าง) |
 | ผู้ใช้อ้างถึงระเบียบ/มาตรา | `references/07-regulation-index.md` |
-| หนังสือภายนอก | `templates/01-external.md` |
-| หนังสือภายใน / บันทึกข้อความ | `templates/02-internal.md` |
-| หนังสือประทับตรา | `templates/03-stamped.md` |
-| คำสั่ง / ระเบียบ / ข้อบังคับ | `templates/04-directive.md` |
-| ประกาศ / แถลงการณ์ / ข่าว | `templates/05-announcement.md` |
-| รายงานการประชุม / บันทึก / หนังสือรับรอง | `templates/06-evidence.md` |
+| ผู้ใช้ขอตรวจร่างหาข้อผิดพลาด | `references/08-common-errors.md` (โหลดเฉพาะกรณีนี้ — ไม่ auto-load) |
+| ผู้ใช้ระบุว่าหนังสือ "ด่วน" หรือ "ลับ" | `references/09-urgency-classification.md` |
+| ผู้ใช้ไม่ระบุรหัสกระทรวงในที่หนังสือ | `references/10-agency-codes.md` (lookup ตามชื่อกระทรวง) |
+| หนังสือถึงพระบรมวงศานุวงศ์ | `references/11-royal-letters.md` + `references/04-salutations.md` (โหลดทั้งคู่ + เพิ่มคำเตือนตรวจกับราชบัณฑิตยสภา) |
+| หนังสือภายนอก | `templates/01-external.md` + `examples/01-external-sample.md` |
+| หนังสือภายใน / บันทึกข้อความ | `templates/02-internal.md` + `examples/02-internal-sample.md` |
+| หนังสือประทับตรา | `templates/03-stamped.md` + `examples/03-stamped-sample.md` |
+| คำสั่ง / ระเบียบ / ข้อบังคับ | `templates/04-directive.md` + `examples/04-directive-sample.md` |
+| ประกาศ / แถลงการณ์ / ข่าว | `templates/05-announcement.md` + `examples/05-announcement-sample.md` |
+| รายงานการประชุม / บันทึก / หนังสือรับรอง | `templates/06-evidence.md` + `examples/06-minutes-sample.md` |
+| ดูภาพรวมตัวอย่างทุกชนิด | `examples/00-index.md` |
+
+**กฎ:** ทุกครั้งที่ร่างเอกสารชนิดใด ให้อ่าน `templates/0X-*.md` (โครง) **และ** `examples/0X-*-sample.md` (ตัวอย่างกรอกเสร็จ) ของชนิดนั้นพร้อมกัน — template ระบุโครงสร้างที่ต้องมี ตัวอย่างระบุระยะเว้นบรรทัด สำนวนมาตรฐาน และจุดที่สลับเลขไทย/อารบิก
 
 ## Output contract
 
