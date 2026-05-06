@@ -1,6 +1,7 @@
 ---
-name: thai-gov-document-writer
-description: ใช้เมื่อผู้ใช้ขอร่างหนังสือราชการไทย (หนังสือภายนอก หนังสือภายใน บันทึกข้อความ คำสั่ง ระเบียบ ประกาศ แถลงการณ์ ข่าว หรือเอกสารราชการอื่น ๆ) ตามระเบียบสำนักนายกรัฐมนตรีว่าด้วยงานสารบรรณ พ.ศ. 2526 และฉบับแก้ไขถึงฉบับที่ 4 พ.ศ. 2564. Use when the user asks Claude to draft, write, format, or review any Thai government official document (หนังสือราชการ, สารบรรณ, ราชการ).
+name: thaidocreview
+description: Opt-in skill loaded only when the user explicitly invokes /thaidocreview. Drafts หนังสือราชการไทย ตามระเบียบสารบรรณ 2526 (แก้ไขถึงฉบับ 4/2564). Do NOT auto-load — Thai official writing style is used only inside the government circle and auto-loading would waste tokens for general users.
+disable-model-invocation: true
 ---
 
 # Thai Government Document Writer
