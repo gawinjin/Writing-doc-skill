@@ -80,6 +80,10 @@ Skill นี้ทำให้ Claude ร่างหนังสือราช
 | ก่อนใส่เลขที่/วันที่ | `references/05-numbering.md` |
 | มีข้อมูลส่วนบุคคล/ชั้นความลับ | `references/06-data-safety.md` (หยุดร่าง) |
 | ผู้ใช้อ้างถึงระเบียบ/มาตรา | `references/07-regulation-index.md` |
+| ผู้ใช้ขอตรวจร่างหาข้อผิดพลาด | `references/08-common-errors.md` (โหลดเฉพาะกรณีนี้ — ไม่ auto-load) |
+| ผู้ใช้ระบุว่าหนังสือ "ด่วน" หรือ "ลับ" | `references/09-urgency-classification.md` |
+| ผู้ใช้ไม่ระบุรหัสกระทรวงในที่หนังสือ | `references/10-agency-codes.md` (lookup ตามชื่อกระทรวง) |
+| หนังสือถึงพระบรมวงศานุวงศ์ | `references/11-royal-letters.md` + `references/04-salutations.md` (โหลดทั้งคู่ + เพิ่มคำเตือนตรวจกับราชบัณฑิตยสภา) |
 | หนังสือภายนอก | `templates/01-external.md` + `examples/01-external-sample.md` |
 | หนังสือภายใน / บันทึกข้อความ | `templates/02-internal.md` + `examples/02-internal-sample.md` |
 | หนังสือประทับตรา | `templates/03-stamped.md` + `examples/03-stamped-sample.md` |
